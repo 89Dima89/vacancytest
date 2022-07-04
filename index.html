@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Модальное окно</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="container" class="container">
+    <div id="left-part" class="left-part">
+    </div>
+    <div id="right-part" class="right-part"></div>
+    <button class="btn" onclick="toggleModal()">Button</button>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-header">
+      <div class="modal-header-btn modal-header-btn1"></div>
+      <div class="modal-header-btn modal-header-btn2"></div>
+      <div class="modal-header-btn modal-header-btn3"></div>
+    </div>
+
+    <div class="modal-content">
+      <div class="modal-content-btn1"></div>
+      <div class="modal-content-btn2"></div>
+    </div>
+
+    <div class="modal-footer">
+      <div class="row">
+        <div class="modal-footer-card"></div>
+        <div class="modal-footer-card"></div>
+        <div class="modal-footer-card"></div>
+        <div class="modal-footer-card"></div>
+        </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleModal() {
+      let el = document.getElementById('modal');
+
+      if (!el)
+        return;
+
+      el.classList.toggle('show-modal');
+    }
+
+    window.addEventListener('click', (sender) => {
+      let senderId = sender.path[0].id;
+      let modal = document.getElementById('modal');
+      let container = document.getElementById('container');
+
+      if (!senderId || !modal || !container)
+        return;
+
+      if ((senderId == 'left-part' || senderId == 'right-part') && modal.classList.contains('show-modal')) {
+        toggleModal();
+      }
+    });
+
+  </script>
+</body>
+</html>

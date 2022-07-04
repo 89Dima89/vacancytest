@@ -1,0 +1,130 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.left-part {
+  position: absolute;
+  left: -650px;
+  top: 0;
+  z-index: 2;
+  background-color: #F3E771;
+  transform: skew(315deg);
+  width: 100vw;
+  height: 100vh;
+
+}
+
+@media (max-width: 575px) {
+  .left-part {
+    left: -350px;
+  }
+}
+
+.right-part {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: #E15D84;
+}
+
+.btn {
+  outline: 0;
+  border: 0;
+  border-radius: 2px;
+  width: 144px;
+  height: 35px;
+  background-color: white;
+  color: black;
+  z-index: 3;
+}
+
+.modal {
+  position: absolute;
+  top: calc(20vh / 2);
+  left: calc(20vw / 2);
+  display: none;
+  z-index: -1;
+  width: 80vw;
+  height: 80vh;
+  background-color: white;
+  border: 0;
+  border-radius: 10px;
+}
+
+.show-modal {
+  display: block !important;
+  z-index: 4 !important;
+}
+
+.modal-header {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 30px;
+}
+.modal-header-btn{
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  margin: 0 5px;
+}
+.modal-header-btn1{
+  background-color: red;
+}
+.modal-header-btn2{
+  background-color: orange;
+}
+.modal-header-btn3{
+  background-color: green;
+}
+
+.modal-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc((80vh - 30px)/2);
+  background-color: #DADFE5;
+}
+.modal-content-btn1{
+  width: 100px;
+  height: 20px;
+  background-color: grey;
+}
+.modal-content-btn2{
+  margin-top: 30px;
+  width: 50px;
+  height: 20px;
+  background-color: grey;
+}
+.modal-footer{
+  width: 100%;
+  height: calc((80vh - 30px)/2);
+  padding: 0 50px;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.modal-footer-card {
+  margin-top: 20px;
+  margin-right: 10px;
+  width: 200px;
+  height: 200px;
+  background-color: #DADFE5;
+}
